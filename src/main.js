@@ -14,6 +14,7 @@ $(document).ready(function() {
 		met.perItemCallback = function (object) {
 			$('#results').append(`
 				<div>
+					<div>&nbsp;</div>
 					<div class="title">${object.title}</div>
 					<div><a href='${object.primaryImage}' target='_blank'><img src='${object.primaryImageSmall}'></img></a></div>
 					<div class="date">${object.artistDisplayName}</div>

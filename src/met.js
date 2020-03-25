@@ -8,9 +8,7 @@ export class Met {
     (async () => {
       try {
         let url = "";
-        url = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${keyword}&artistOrCulture=${artist}&${startYear}&dateEnd=${endYear}&hasImages=true`;
-        //let url = `https://collectionapi.metmuseum.org/public/collection/v1/search?dateBegin=${startYear}&dateEnd=${endYear}&q=${keyword}&hasImages=true`;
-        //let url = `https://collectionapi.metmuseum.org/public/collection/v1/search?dateBegin=${startYear}&dateEnd=${endYear}&q=${keyword}&hasImages=true`;
+        url = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${keyword}`;
         let response = await fetch(url);
         let json;
         if (response.ok && response.status === 200) {
