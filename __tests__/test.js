@@ -1,5 +1,9 @@
 import { Met } from '../src/met.js';
 
+function sleep(start, sleep) {
+	if (Date.now() < Date.parse(start) + sleep) setTimeout(sleep(start, sleep));
+}
+
 describe('Jest', () => {
 
 	test('Jest works properly', () => {
@@ -9,13 +13,13 @@ describe('Jest', () => {
 });
 
 describe('Met object', () => {
-
-	test('Met object pulls data successfully', () => {
-		let met = new Met();
-		window.items = [];
-		met.callback = (item) => { window.items.push(item); console.log(item);	}
-		met.search('rembrandt','1600','1700');
-		expect(window.items.length).toEqual(36);
-	});
 	
+	test('Pull data from API', async () => {
+		let met = new Met();
+		await met.search('rembrandt','1600','1700', () => {
+			expect(met.count).toEqual(36);
+		});
+
+	});
+
 });

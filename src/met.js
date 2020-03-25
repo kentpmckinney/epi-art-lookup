@@ -1,9 +1,10 @@
 export class Met {
   constructor () {
-    this.callback;
+    this.perItemCallback;
   }
 
-  search (keyword, startYear, endYear) {
+  search (keyword, startYear, endYear, completionCallback) {
+    let count = 0;
     (async () => {
       try {
         let url = `https://collectionapi.metmuseum.org/public/collection/v1/search?dateBegin=${startYear}&dateEnd=${endYear}&q=${keyword}&hasImages=true`;
@@ -21,8 +22,10 @@ export class Met {
                   let json2;
                   if (response.ok && response.status === 200) {
                     json2 = await response.json();
-                    if (json2)
+                    if (json2) {
                       if (this.callback) this.callback(json2);
+                      count++;
+                    }
                   }
               })();
             }
@@ -32,5 +35,6 @@ export class Met {
         alert(e.message);
       }
     })();
+    if (completionCallback) completionCallback(count);
   }
 }

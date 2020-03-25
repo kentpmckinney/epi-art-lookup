@@ -9,11 +9,11 @@ $(document).ready(function() {
 		let keyword = $('#keyword').val();
 		let startYear = $('#start-year').val();
 		let endYear = $('#end-year').val();
-		met.callback = function (object) {
+		met.perItemCallback = function (object) {
 			console.log(object.primaryImageSmall);
 			console.log(object.title);
 			console.log(object.objectDate);
 		}
-		met.search(keyword, startYear, endYear);
+		met.search(keyword, startYear, endYear, null);
 	});
 });
