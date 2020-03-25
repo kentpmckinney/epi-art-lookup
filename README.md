@@ -24,7 +24,7 @@ https://github.com/kentpmckinney/epicodus-art-lookup
 * 3/24/2020 - Troubleshot BetterDoctor API to no avail (1.5 hours)
 * 3/24/2020 - Researched an alternative API to use and settled on the Metropolitan Museum of Art API (0.5 hours)
 * 3/25/2020 - Implemented code to get data from the API (1.5 hours)
-
+* 3/25/2020 - Created a test (0.5 hours)
 
 ### Specifications:
 
