@@ -1,9 +1,6 @@
-
+import { Met } from '../src/met.js';
 
 describe('Jest', () => {
-
-	beforeEach(() => {
-	});
 
 	test('Jest works properly', () => {
 		expect(0).toEqual(0);
@@ -13,13 +10,12 @@ describe('Jest', () => {
 
 describe('Met object', () => {
 
-	beforeEach(() => {
-		let met = Met();
-	});
-
 	test('Met object pulls data successfully', () => {
+		let met = new Met();
+		window.items = [];
+		met.callback = (item) => { window.items.push(item); console.log(item);	}
 		met.search('rembrandt','1600','1700');
-		expect(met.items.length).toEqual(36);
+		expect(window.items.length).toEqual(36);
 	});
 	
 });

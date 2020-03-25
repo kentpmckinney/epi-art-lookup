@@ -1,0 +1,36 @@
+export class Met {
+  constructor () {
+    this.callback;
+  }
+
+  search (keyword, startYear, endYear) {
+    (async () => {
+      try {
+        let url = `https://collectionapi.metmuseum.org/public/collection/v1/search?dateBegin=${startYear}&dateEnd=${endYear}&q=${keyword}&hasImages=true`;
+        let response = await fetch(url);
+        let json;
+        if (response.ok && response.status === 200) {
+          json = await response.json();
+          if (json) {
+            let objects = json.objectIDs;
+            for (let i = 0; i < json.total; i++) {
+              let object = objects[i];
+              (async () => {
+                  let url2 = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${object}`;
+                  let response = await fetch(url2);
+                  let json2;
+                  if (response.ok && response.status === 200) {
+                    json2 = await response.json();
+                    if (json2)
+                      if (this.callback) this.callback(json2);
+                  }
+              })();
+            }
+          }
+        }
+      } catch (e) {
+        alert(e.message);
+      }
+    })();
+  }
+}
