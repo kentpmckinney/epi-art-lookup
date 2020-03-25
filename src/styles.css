@@ -1,0 +1,17 @@
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+img {
+  height: 100px;
+}
+
+.date {
+  font-size: 8pt;
+}
+
+.title {
+  font-size: 12pt;
+}

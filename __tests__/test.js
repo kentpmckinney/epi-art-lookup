@@ -16,7 +16,7 @@ describe('Met object', () => {
 	
 	test('Pull data from API', async () => {
 		let met = new Met();
-		await met.search('rembrandt','1600','1700', () => {
+		await met.search('rembrandt','1600','1700', '', () => {
 			expect(met.count).toEqual(36);
 		});
 

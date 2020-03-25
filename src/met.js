@@ -3,11 +3,14 @@ export class Met {
     this.perItemCallback;
   }
 
-  search (keyword, startYear, endYear, completionCallback) {
+  search (keyword, startYear, endYear, artist, completionCallback) {
     let count = 0;
     (async () => {
       try {
-        let url = `https://collectionapi.metmuseum.org/public/collection/v1/search?dateBegin=${startYear}&dateEnd=${endYear}&q=${keyword}&hasImages=true`;
+        let url = "";
+        url = `https://collectionapi.metmuseum.org/public/collection/v1/search?q=${keyword}&artistOrCulture=${artist}&${startYear}&dateEnd=${endYear}&hasImages=true`;
+        //let url = `https://collectionapi.metmuseum.org/public/collection/v1/search?dateBegin=${startYear}&dateEnd=${endYear}&q=${keyword}&hasImages=true`;
+        //let url = `https://collectionapi.metmuseum.org/public/collection/v1/search?dateBegin=${startYear}&dateEnd=${endYear}&q=${keyword}&hasImages=true`;
         let response = await fetch(url);
         let json;
         if (response.ok && response.status === 200) {
@@ -23,7 +26,7 @@ export class Met {
                   if (response.ok && response.status === 200) {
                     json2 = await response.json();
                     if (json2) {
-                      if (this.callback) this.callback(json2);
+                      if (this.perItemCallback) this.perItemCallback(json2);
                       count++;
                     }
                   }
