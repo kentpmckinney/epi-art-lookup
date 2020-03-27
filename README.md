@@ -27,7 +27,7 @@ https://github.com/kentpmckinney/epicodus-art-lookup
 * 3/25/2020 - Created a test (0.5 hours)
 * 3/25/2020 - Ran into problems creating a test for async code and exhausted workarounds I found online to no avail (2.0 hours)
 * 3/25/2020 - Did the TDD conceptual approach without using Jest to get to a relatively complete UI (1.0 hours)
-
+* 3/27/2020 - Refactor to meet project requirements (1.0 hours)
 
 ### Specifications:
 
@@ -35,6 +35,6 @@ https://github.com/kentpmckinney/epicodus-art-lookup
 | :------------- | :------------- | :------------- |
 | ** Webpack and NPM packages run properly ** | ✓ | ✓ |
 | ** Successfully query the API ** | ✓ | ✓ |
-| ** Correctly parse and display the API's results ** |  |  |
+| ** Correctly parse and display the API's results ** | ✓ | ✓ |
 | ** errors return a detailed notification ** |  |  |
 | ** No search results return a notification ** |  |  |

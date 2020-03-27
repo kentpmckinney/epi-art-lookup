@@ -1,3 +1,4 @@
+import 'bootstrap';
 import './styles.css';
 import $ from 'jquery';
 import { Met } from './met.js';
@@ -23,5 +24,11 @@ $(document).ready(function() {
 			`);
 		}
 		met.search(keyword, startYear, endYear, artist, ()=>{});
+	});
+
+	$('#keyword').bind('keypress', function(e) {
+		let event = e || window.event;
+		let keycode = event.keyCode || event.which;
+		if (keycode == '13') $('#test').click();
 	});
 });
