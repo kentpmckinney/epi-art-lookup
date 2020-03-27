@@ -1,34 +1,40 @@
 import 'bootstrap';
 import './styles.css';
 import $ from 'jquery';
-import { Met } from './met.js';
+import { Art } from './art.js';
 
-let met = new Met();
+let art = new Art();
 
 $(document).ready(function() {
+
+	/* Respond to the press of the Find button */
 	$('#test').click(function() {
 		let keyword = $('#keyword').val();
-		let startYear = $('#start-year').val();
-		let endYear = $('#end-year').val();
-		let artist = $('#artist').val();
 		$('#results').empty();
-		met.perItemCallback = function (object) {
-			$('#results').append(`
-				<div>
-					<div>&nbsp;</div>
-					<div class="title">${object.title}</div>
-					<div><a href='${object.primaryImage}' target='_blank'><img src='${object.primaryImageSmall}'></img></a></div>
-					<div class="date">${object.artistDisplayName}</div>
-					<div class="date">${object.objectDate}</div>
-				</div>
-			`);
-		}
-		met.search(keyword, startYear, endYear, artist, ()=>{});
+			let status = art.search(keyword,
+				(peritem) => {
+				$('#results').append(`
+					<div>
+						<div>&nbsp;</div>
+						<div class="title">${peritem.title}</div>
+						<div><a href='${peritem.primaryImage}' target='_blank'><img src='${peritem.primaryImageSmall}'></img></a></div>
+						<div class="date">${peritem.artistDisplayName}</div>
+						<div class="date">${peritem.objectDate}</div>
+					</div>
+				`);
+			}, (error) => {
+					$('#results').append(`<span class="error">${error}</span>`);
+			}, (noresults) => {
+				$('#results').append(`<span class="info">${noresults}</span>`);
+			});
+
 	});
 
+	/* Respond to ENTER key presses on the search input field */
 	$('#keyword').bind('keypress', function(e) {
 		let event = e || window.event;
 		let keycode = event.keyCode || event.which;
 		if (keycode == '13') $('#test').click();
 	});
+
 });

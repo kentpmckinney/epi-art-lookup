@@ -1,21 +1,22 @@
-main {
+main, header, footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  font-size: 8pt;
 }
 
 img {
   height: 100px;
 }
 
-.date {
-  font-size: 8pt;
-}
-
 .title {
   font-size: 12pt;
 }
 
-p {
-  font-size: 8pt;
+.error {
+  color: red;
+}
+
+.info {
+  color: blue;
 }
