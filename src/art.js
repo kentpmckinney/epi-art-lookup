@@ -9,7 +9,7 @@ export class Art {
       let response = await fetch(url);
 
       // Handle errors
-      if (!response.ok) { if (errorCallback) errorCallback("The server could not be reached."); }
+      if (!response.ok) { if (errorCallback) errorCallback(`Error: ${response.status}: ${response.statusText}`); }
 
       if (response.ok && response.status === 200) { 
         let json = await response.json();

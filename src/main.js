@@ -11,7 +11,7 @@ $(document).ready(function() {
 	$('#test').click(function() {
 		let keyword = $('#keyword').val();
 		$('#results').empty();
-			let status = art.search(keyword,
+			art.search(keyword,
 				(peritem) => {
 				$('#results').append(`
 					<div>
