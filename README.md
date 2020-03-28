@@ -32,8 +32,8 @@ https://github.com/kentpmckinney/epicodus-art-lookup
 
 | Spec | Input | Output |
 | :------------- | :------------- | :------------- |
-| ** Webpack and NPM packages run properly ** | ✓ | ✓ |
-| ** Successfully query the API ** | ✓ | ✓ |
-| ** Correctly parse and display the API's results ** | ✓ | ✓ |
-| ** errors return a detailed notification ** | ✓ | ✓ |
-| ** No search results return a notification ** | ✓ | ✓ |
+| Webpack and NPM packages run properly | ✓ | ✓ |
+| Successfully query the API | ✓ | ✓ |
+| Correctly parse and display the API's results | ✓ | ✓ |
+| errors return a detailed notification | ✓ | ✓ |
+| No search results return a notification | ✓ | ✓ |
