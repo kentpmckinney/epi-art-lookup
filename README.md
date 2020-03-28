@@ -16,7 +16,6 @@ https://github.com/kentpmckinney/epicodus-art-lookup
     4. Run the command `npm install` to download a local cache of the npm packages used by this application
     5. Build the application with the command `npm run build`
     6. Start the application with the command `npm run start`
-    7. Add a .env file to the root of the downloaded source files
  
 ### Changelog:
 * 3/24/2020 - Created skeleton project and added templates (0.5 hours)
