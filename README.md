@@ -1,10 +1,10 @@
+<!-- Category: HTML/CSS/JS -->
 # Independent Project
 ## Art Lookup
 https://github.com/kentpmckinney/epicodus-art-lookup
 
 ##### Author: Kent McKinney - [GitHub](https://github.com/kentpmckinney)
 ##### Copyright &copy; 2020 Kent McKinney
-##### License: GPLv3
 ### Description:
 
 ``This program provides the ability to look up information about art in the Metropolitan Museum of Art API (https://metmuseum.github.io/)``
