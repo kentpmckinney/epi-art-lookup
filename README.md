@@ -1,32 +1,69 @@
-<!-- Category: HTML/CSS/JS -->
-# Independent Project
-## Art Lookup
-https://github.com/kentpmckinney/epicodus-art-lookup
+<!-- Category: Epicodus;HTML/CSS/JS -->
+# Art Lookup
 
-##### Author: Kent McKinney - [GitHub](https://github.com/kentpmckinney)
-##### Copyright &copy; 2020 Kent McKinney
-### Description:
+Looks for pictures of art from the Metropolitan Museum of Art
 
-``This program provides the ability to look up information about art in the Metropolitan Museum of Art API (https://metmuseum.github.io/)``
+https://github.com/kentpmckinney/epi-art-lookup
 
-### Setup Instructions:
-    1. Download a copy of the source code from GitHub from https://github.com/kentpmckinney/epicodus-art-lookup
-    2. Install NodeJS if not already installed
-    3. Navigate to the location of the downloaded source files
-    4. Run the command `npm install` to download a local cache of the npm packages used by this application
-    5. Build the application with the command `npm run build`
-    6. Start the application with the command `npm run start`
- 
-### Changelog:
-* 3/24/2020 - Created skeleton project and added templates (0.5 hours)
-* 3/24/2020 - Added specs to README.md (0.5 hours)
-* 3/24/2020 - Troubleshot BetterDoctor API to no avail (1.5 hours)
-* 3/24/2020 - Researched an alternative API to use and settled on the Metropolitan Museum of Art API (0.5 hours)
-* 3/25/2020 - Implemented code to get data from the API(1.5 hours)
-* 3/25/2020 - Created a test (0.5 hours)
-* 3/25/2020 - Ran into problems creating a test for async code and exhausted workarounds I found online to no avail (2.0 hours)
-* 3/25/2020 - Did the TDD conceptual approach without using Jest to get to a relatively complete UI (1.0 hours)
-* 3/27/2020 - Refactor to meet project requirements (3.0 hours)
+## Previewing this Project
+
+This project is hosted at: https://kentpmckinney.github.io/epi-art-lookup
+
+## Working with the Source Code
+
+The following instructions explain how to set up a development environment for this project on MacOS. Steps will differ depending on the operating system.
+
+### Prerequisites
+
+The following software must be installed and properly configured on the target machine. 
+
+```
+An updated web browser (Internet Explorer is not compatible)
+```
+```
+Node.js
+```
+```
+Git (optional but recommended)
+```
+
+### Setting up a Development Environment
+
+1. Download a copy of the source code from: https://github.com/kentpmckinney/epi-art-lookup
+   or clone using the repository link: https://github.com/kentpmckinney/epi-art-lookup.git
+2. Navigate to the folder location of the source files in Finder or in the Terminal
+3. Run the command `npm install` to download a local cache of the npm packages used by this application
+4. Build the application with the command `npm run build`
+5. Start the application with the command `npm run start`
+
+## Running Automated Tests
+
+how to run the automated tests
+
+```
+example
+```
+
+## Deployment
+
+
+
+## Technologies Used
+
+* JavaScript
+* HTML
+* CSS
+* Webpack
+* Babel
+
+## Authors
+
+Kent McKinney - [GitHub](https://github.com/kentpmckinney) - [LinkedIn](https://www.linkedin.com/in/kentpmckinney/)
+
+### Copyright &copy; 2020 Kent P. McKinney
+
+## Acknowledgments
+
 
 ### Specifications:
 
