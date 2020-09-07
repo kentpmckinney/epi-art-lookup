@@ -1,33 +1,44 @@
 import 'bootstrap';
-import './styles.css';
+import './style.css';
 import $ from 'jquery';
-import { Art } from './art.js';
 
-let art = new Art();
+$(document).ready(() => {
 
-$(document).ready(function() {
-
-	/* Respond to the press of the Find button */
-	$('#test').click(function() {
+	$('#find').click(function() {
 		let keyword = $('#keyword').val();
 		$('#results').empty();
-			art.search(keyword,
-				(peritem) => {
-				$('#results').append(`
-					<div>
-						<div>&nbsp;</div>
-						<div class="title">${peritem.title}</div>
-						<div><a href='${peritem.primaryImage}' target='_blank'><img src='${peritem.primaryImageSmall}'></img></a></div>
-						<div class="date">${peritem.artistDisplayName}</div>
-						<div class="date">${peritem.objectDate}</div>
-					</div>
-				`);
-			}, (error) => {
-					$('#results').append(`<span class="error">${error}</span>`);
-			}, (noresults) => {
-				$('#results').append(`<span class="info">${noresults}</span>`);
+		(async () => {
+			let search = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${keyword}`);
+			if (!search.ok || !search.status === 200) {
+				$('#results').append(`<span class="error">Error: ${search.status}: ${search.statusText}</span>`);
+				return;
+			}
+			let objects = (await search.json()).objectIDs;
+			if (!objects) {
+				$('#results').append(`<span class="info">No results found.</span>`);
+				return;
+			}
+			objects.forEach(async object => {
+				let result = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${object}`);
+				if (result.ok && result.status === 200) {
+					let item = await result.json();
+					if (item) {
+						$('#results').append(`
+							<div>
+								<div>&nbsp;</div>
+								<div class="title">${item.title}</div>
+								<div><a href='${item.primaryImage}' target='_blank'>
+								<img src='${item.primaryImageSmall}'></img></a></div>
+								<div class="date">${item.artistDisplayName}</div>
+								<div class="date">${item.objectDate}</div>
+							</div>
+						`);
+					}
+				}
 			});
+		})();
 
+		$('#keyword').focus();
 	});
 
 	/* Respond to ENTER key presses on the search input field */
@@ -37,4 +48,5 @@ $(document).ready(function() {
 		if (keycode == '13') $('#test').click();
 	});
 
+	$('#keyword').focus();
 });
