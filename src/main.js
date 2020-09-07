@@ -45,7 +45,7 @@ $(document).ready(() => {
 	$('#keyword').bind('keypress', function(e) {
 		let event = e || window.event;
 		let keycode = event.keyCode || event.which;
-		if (keycode == '13') $('#test').click();
+		if (keycode == '13') $('#find').click();
 	});
 
 	$('#keyword').focus();
