@@ -24,8 +24,8 @@ $(document).ready(() => {
 			if (result.ok && result.status === 200) {
 				let item = await result.json();
 				if (item)
-					$('#results').append(`<div><div>&nbsp;</div>
-						<div class="title">${item.title}</div>
+					$('#results').append(`<br><div class="item">
+						<div class="title">${item.title}</div><hr>
 						<div><a href='${item.primaryImage}' target='_blank'>
 						<img src='${item.primaryImageSmall}'></img></a></div>
 						<div class="date">${item.artistDisplayName}</div>

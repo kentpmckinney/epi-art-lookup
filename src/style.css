@@ -1,12 +1,9 @@
 main, header, footer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   font-size: 10pt;
   margin: 5px;
 }
 
-.fancy-box {
+.box {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 8px;
   user-select: none;
@@ -25,16 +22,24 @@ footer {
   align-items: flex-end;
   justify-content: center;
   color: gray;
-  font-size: 7pt;
+  font-size: 6pt;
   font-weight: lighter;
 }
 
 img {
-  height: 100px;
+  height: 110px;
 }
 
 .title {
-  font-size: 12pt;
+  user-select: none;
+  font-size: 9pt;
+  font-weight: bold;
+}
+
+.date {
+  user-select: none;
+  font-size: 7pt;
+  font-weight: lighter;
 }
 
 .error {
@@ -43,4 +48,41 @@ img {
 
 .info {
   color: blue;
+}
+
+.item {
+  border: 20px solid transparent;
+}
+
+#results {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image {
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid lightgray;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  font-weight: bold;
 }
