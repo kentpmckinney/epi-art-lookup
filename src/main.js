@@ -5,6 +5,7 @@ import $ from 'jquery';
 $(document).ready(() => {
 
 	$('#find').click(function() {
+		$('#results').html = '';
 		let keyword = $('#keyword').val();
 		$('#results').empty();
 		(async () => {
