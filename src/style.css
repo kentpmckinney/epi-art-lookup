@@ -2,7 +2,7 @@ main, header, footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  font-size: 12pt;
+  font-size: 10pt;
   margin: 5px;
 }
 
