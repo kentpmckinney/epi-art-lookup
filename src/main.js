@@ -5,7 +5,7 @@ import $ from 'jquery';
 $(document).ready(() => {
 
 	$('#find').click(function() {
-		$('#results').html = '';
+		$('#results').html = ''; /* Clear previous search results, if any */
 		let keyword = $('#keyword').val();
 		$('#results').empty();
 		(async () => {
@@ -19,24 +19,28 @@ $(document).ready(() => {
 				$('#results').append(`<span class="info">No results found.</span>`);
 				return;
 			}
-			objects.forEach(async object => {
-				let result = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${object}`);
-				if (result.ok && result.status === 200) {
-					let item = await result.json();
-					if (item) {
-						$('#results').append(`
-							<div>
-								<div>&nbsp;</div>
-								<div class="title">${item.title}</div>
-								<div><a href='${item.primaryImage}' target='_blank'>
-								<img src='${item.primaryImageSmall}'></img></a></div>
-								<div class="date">${item.artistDisplayName}</div>
-								<div class="date">${item.objectDate}</div>
-							</div>
-						`);
+			for (let i = 0; i < objects.length; i++) {
+				if ($('#keyword').val() != keyword) /* If the user changed the search term */
+					break; /* Stop showing results for the old term */
+				(async () => {
+					let result = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${object}`);
+					if (result.ok && result.status === 200) {
+						let item = await result.json();
+						if (item) {
+							$('#results').append(`
+								<div>
+									<div>&nbsp;</div>
+									<div class="title">${item.title}</div>
+									<div><a href='${item.primaryImage}' target='_blank'>
+									<img src='${item.primaryImageSmall}'></img></a></div>
+									<div class="date">${item.artistDisplayName}</div>
+									<div class="date">${item.objectDate}</div>
+								</div>
+							`);
+						}
 					}
-				}
-			});
+				})();
+			};
 		})();
 
 		$('#keyword').focus();
