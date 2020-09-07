@@ -8,7 +8,7 @@ main, header, footer {
 
 .fancy-box {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 5px;
+  padding: 8px;
 }
 
 input:hover {
@@ -24,7 +24,7 @@ footer {
   align-items: flex-end;
   justify-content: center;
   color: gray;
-  font-size: 8pt;
+  font-size: 7pt;
   font-weight: lighter;
 }
 
