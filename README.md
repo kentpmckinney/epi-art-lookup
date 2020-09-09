@@ -1,4 +1,6 @@
 <!-- Category: Epicodus;HTML/CSS/JS -->
+<!-- Portfolio: Yes -->
+
 # Art Lookup
 
 Looks for pictures of art from the Metropolitan Museum of Art
