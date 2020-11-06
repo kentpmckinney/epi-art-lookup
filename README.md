@@ -11,6 +11,7 @@ Looks for pictures of art from the Metropolitan Museum of Art
 <br/>
 
 ### Previewing this Project
+![Screenshot](http://kentpmckinney.github.io/epi-art-lookup/epi-art-lookup.gif)
 
 <br/>
 
