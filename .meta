@@ -1,8 +1,13 @@
 Categories: `Epicodus;HTML/CSS/JS;Featured`
 Technologies: `JavaScript;HTML;CSS;Webpack`
 Summary: `Looks for pictures of art from the Metropolitan Museum of Art`
-Instructions: `.`
+Description: ``
+Instructions: `Enter search terms into the input field and press go, press enter, or select the Find button.`
 Demolink: ``
+Demo: `Yes`
+Source: `Yes`
+Notes: ``
 Screenshots: `http://kentpmckinney.github.io/epi-art-lookup/epi-art-lookup.gif`
 Acknowledgments: `https://www.learnhowtoprogram.com/intermediate-javascript/asynchrony-and-apis/asynchrony-and-apis-independent-project`
 Portfolio: `Yes`
+External: `No`
