@@ -6,7 +6,7 @@ Looks for pictures of art from the Metropolitan Museum of Art
   <br/>
 
 ### How to Use
-.
+Enter search terms into the input field and press go, press enter, or select the Find button.
 
 <br/>
 
