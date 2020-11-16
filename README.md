@@ -42,6 +42,7 @@ The following software must be installed and properly configured on the target m
 
 
 * Git (recommended)
+* An updated web browser (Internet Explorer may not be compatible)
 <br/>
 
 ### Setting up a Development Environment
